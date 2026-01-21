@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- META DATA & PAGE SETTINGS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <!-- INTERNAL CSS STYLING (OPTIONAL) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 350px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            background: #27ae60;
+            color: white;
+            padding: 10px;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form action="/submit" method="POST">
+
+        <!-- TEXT INPUT -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="full_name" placeholder="Enter Full Name" required>
+
+        <!-- EMAIL INPUT -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email_address" placeholder="Enter Email" required>
+
+        <!-- AGE INPUT -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="5" max="100">
+
+        <!-- SELECT DROPDOWN -->
+        <label for="course">Select Course:</label>
+        <select id="course" name="course">
+            <option value="">-- Choose --</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc</option>
+            <option value="bcom">B.Com</option>
+            <option value="ba">BA</option>
+        </select>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
