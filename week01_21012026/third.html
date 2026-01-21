@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form with Extra Elements</title>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <!-- TEXT FORMATTING EXAMPLES -->
+    <p>This form is for <strong>student registration</strong> for the new academic year.</p>
+    <p>Please fill all the details and <u>submit</u> the form. Fields marked with <em>*</em> are mandatory.</p>
+
+    <!-- HYPERLINK -->
+    <p>For more details, visit:
+        <a href="https://www.education.gov.in" target="_blank">Ministry of Education</a>
+    </p>
+
+    <!-- IMAGE -->
+    <img src="download.png" alt="Student Portal Image" width="250" height="250"><br><br>
+
+    <!-- FORM -->
+    <form action="/submit" method="POST">
+
+        <label>Full Name:</label><br>
+        <input type="text" name="full_name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age"><br><br>
+
+        <label>Course:</label><br>
+        <select name="course">
+            <option value="">-- Select Course --</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc</option>
+            <option value="bcom">B.Com</option>
+            <option value="ba">BA</option>
+        </select><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="Other"> Other<br><br>
+
+        <label>Subjects Interested:</label><br>
+        <input type="checkbox" name="subject" value="math"> Math
+        <input type="checkbox" name="subject" value="science"> Science
+        <input type="checkbox" name="subject" value="commerce"> Commerce<br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+    <br><hr><br>
+
+    <!-- TABLE -->
+    <h2>Available Courses</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Course</th>
+            <th>Duration</th>
+            <th>Fees</th>
+        </tr>
+        <tr>
+            <td>BCA</td>
+            <td>3 Years</td>
+            <td>₹45,000 / Year</td>
+        </tr>
+        <tr>
+            <td>B.Sc</td>
+            <td>3 Years</td>
+            <td>₹40,000 / Year</td>
+        </tr>
+        <tr>
+            <td>B.Com</td>
+            <td>3 Years</td>
+            <td>₹30,000 / Year</td>
+        </tr>
+    </table>
+
+</body>
+</html>
