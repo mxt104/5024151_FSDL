@@ -1,44 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Student Registration Form</title>
-</head>
+    <title>Student Registration Form</title>
 
+    <style>
+        /* Full Page Background Image */
+        body {
+            background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 40px;
+        }
+
+        /* Form Container */
+        .form-box {
+            width: 420px;
+            margin: auto;
+            background-image : url('download.png');
+            background-size: cover;
+            padding: 50px;
+            border-radius: 50px;
+            box-shadow: 5px 5px 18px rgba(240, 8, 8, 0.3);
+        }
+
+        /* Heading Styling */
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin-bottom: 15px;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid gray;
+            border-radius: 6px;
+            margin-top: 4px;
+            margin-bottom: 15px;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: blue;
+            outline: none;
+        }
+
+        /* Button Style */
+        /* Button Style */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    transition: 0.3s ease; /* Animation smoothness */
+    box-shadow: 0px 0px 8px rgba(231, 2, 2, 0.3);
+}
+
+/* Hover Animation */
+button:hover {
+    background-color: navy;
+    cursor: pointer;
+    transform: scale(0); /* Slight grow */
+    box-shadow: 0px 0px 15px rgba(0, 0, 255, 0.5); /* Soft blue glow */
+}
+
+/* Click Animation */
+button:active {
+    transform: scale(0.1); /* Press effect */
+}
+
+    </style>
+
+</head>
 <body>
 
-    <h1>Student Registration Form</h1>
+    <div class="form-box">
+        <h1>Student Registration Form</h1>
 
-    <form action="/submit" method="POST">
+        <form action="/submit" method="POST">
 
-        <!-- Text Input -->
-        <label for="fullname">Full Name:</label><br>
-        <input type="text" id="fullname" name="full_name" placeholder="Enter your name" required><br><br>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="full_name" placeholder="Enter your name" required>
 
-        <!-- Email Input -->
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email_address" placeholder="Enter your email" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email_address" placeholder="Enter your email" required>
 
-        <!-- Number Input -->
-        <label for="age">Age:</label><br>
-        <input type="number" id="age" name="age" min="5" max="100"><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="5" max="100">
 
-        <!-- Select Dropdown -->
-        <label for="course">Select Course:</label><br>
-        <select id="course" name="course">
-            <option value="">-- Select Course --</option>
-            <option value="bca">BCA</option>
-            <option value="bsc">B.Sc.</option>
-            <option value="bcom">B.Com</option>
-            <option value="ba">BA</option>
-        </select><br><br>
+            <label for="course">Select Course:</label>
+            <select id="course" name="course">
+                <option value="">-- Select Course --</option>
+                <option value="bca">BCA</option>
+                <option value="bsc">B.Sc.</option>
+                <option value="bcom">B.Com</option>
+                <option value="ba">BA</option>
+            </select>
+            <label for="Gender">Select Gender:</label>
+            <select id="Gender" name="Gender">
+                <option value="">-- Select Gender --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>  
+                <option value="others">Others</option>
+            </select>
 
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
-
-    </form>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
