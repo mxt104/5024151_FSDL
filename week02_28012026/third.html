@@ -4,26 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Registration Form with Extra Elements</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <h1>Student Registration Form</h1>
 
-    <!-- TEXT FORMATTING EXAMPLES -->
     <p>This form is for <strong>student registration</strong> for the new academic year.</p>
     <p>Please fill all the details and <u>submit</u> the form. Fields marked with <em>*</em> are mandatory.</p>
 
-    <!-- HYPERLINK -->
     <p>For more details, visit:
         <a href="https://www.education.gov.in" target="_blank">Ministry of Education</a>
     </p>
 
-    <!-- IMAGE -->
     <img src="download.png" alt="Student Portal Image" width="250" height="250"><br><br>
 
-    <!-- FORM -->
-    <form action="/submit" method="POST">
+    <form action="/submit" method="POST" class="reg-form">
 
         <label>Full Name:</label><br>
         <input type="text" name="full_name" required><br><br>
@@ -53,16 +50,15 @@
         <input type="checkbox" name="subject" value="science"> Science
         <input type="checkbox" name="subject" value="commerce"> Commerce<br><br>
 
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
+        <button type="submit" class="btn-submit">Submit</button>
+        <button type="reset" class="btn-reset">Reset</button>
 
     </form>
 
     <br><hr><br>
 
-    <!-- TABLE -->
     <h2>Available Courses</h2>
-    <table border="1" cellpadding="5">
+    <table class="course-table">
         <tr>
             <th>Course</th>
             <th>Duration</th>
