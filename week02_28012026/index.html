@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Car Showroom - Video Hover Edition</title>
+
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+        font-family:Arial, sans-serif;
+        background:#0d1117;
+        color:white;
+        padding-bottom:50px;
+    }
+
+    .navbar{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 40px;
+        background:#010409;
+        border-bottom:1px solid #30363d;
+    }
+
+    .navbar a{
+        color:#c9d1d9;
+        margin:0 12px;
+        text-decoration:none;
+        font-weight:500;
+    }
+
+    .hero{
+        height:350px;
+        background:url('https://images.unsplash.com/photo-1552519507-da3b142c6e3d') center/cover no-repeat;
+        position:relative;
+        display:flex;
+        align-items:center;
+        padding-left:60px;
+    }
+    .hero::after{
+        content:"";
+        position:absolute;
+        inset:0;
+        background:rgba(0,0,0,0.55);
+    }
+    .hero-content{
+        position:relative;
+        z-index:2;
+    }
+    .hero-content h1{font-size:42px;font-weight:700;}
+    .hero-content p{font-size:18px;margin-top:6px;}
+
+    .cars-section{
+        padding:40px;
+    }
+    .cars-section h2{
+        font-size:26px;
+        margin-bottom:18px;
+    }
+
+    .car-grid{
+        display:flex;
+        gap:22px;
+    }
+
+    .car-card{
+        width:260px;
+        background:#161b22;
+        border-radius:8px;
+        border:1px solid #30363d;
+        overflow:hidden;
+        position:relative;
+        cursor:pointer;
+        box-shadow:0 0 15px rgba(0,0,0,0.5);
+    }
+
+    /* Default Image */
+    .car-card img{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        display:block;
+        transition:0.3s ease;
+    }
+
+    /* Video Layer */
+    .car-card video{
+        width:100%;
+        height:180px;
+        object-fit:cover;
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:0;
+        transition:0.3s ease;
+        pointer-events:none;
+    }
+
+    /* Hover video shows */
+    .car-card:hover video{
+        opacity:1;
+    }
+
+    /* Hide image on hover */
+    .car-card:hover img{
+        opacity:0;
+    }
+
+    .car-card h3{
+        padding:10px;
+        font-size:20px;
+        color:#f0f6fc;
+    }
+
+    .car-card p{
+        padding:0 10px 12px;
+        font-weight:bold;
+        color:#f0b90b;
+    }
+</style>
+</head>
+<body>
+
+<header class="navbar">
+    <div style="color:white;font-weight:700;font-size:20px;">Elite Motors</div>
+    <nav>
+        <a href="#">Cars</a>
+        <a href="#">Offers</a>
+        <a href="#">Finance</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Luxury Cars in Motion</h1>
+        <p>Hover to see real video edits of our premium lineup.</p>
+    </div>
+</section>
+
+<section class="cars-section">
+<h2>Featured Cars</h2>
+<div class="car-grid">
+
+    <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
+        <video muted loop>
+            <source src="bmw.mp4" type="video/mp4">
+        </video>
+        <h3>BMW M3</h3>
+        <p>₹78,00,000</p>
+    </div>
+
+    <div class="car-card">
+        <img src="3.png">
+        <video muted autoplay playsinline loop>
+            <source src="audi.mp4" type="video/mp4">
+        </video>
+        <h3>Audi A6</h3>
+        <p>₹65,00,000</p>
+    </div>
+
+    <div class="car-card">
+        <img src="https://images.unsplash.com/photo-1621303831589-6eec545f52c0">
+        <video muted loop>
+            <source src="mercedes.mp4" type="video/mp4">
+        </video>
+        <h3>Mercedes C-Class</h3>
+        <p>₹82,00,000</p>
+    </div>
+
+</div>
+</section>
+
+</body>
+</html>
