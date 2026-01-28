@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Complete HTML Elements Demonstration</title>
+</head>
+
+<body>
+
+    <h1>HTML Elements Demonstration Page</h1>
+
+    <!-- FORMATTING ELEMENTS -->
+    <p>This page shows various <strong>HTML elements</strong>, <em>attributes</em>, and structures used in web pages.</p>
+    <p><u>Formatting Example:</u> Bold, Italic, Underline, & <mark>Highlighted text</mark> are shown here.</p>
+
+    <hr>
+
+    <!-- HYPERLINK -->
+    <h2>Hyperlink</h2>
+    <p>Visit the official website:
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+    </p>
+
+    <hr>
+
+    <!-- IMAGE -->
+    <h2>Image Example</h2>
+    <img src="meme.png" alt="Sample Image" width="200" height="150">
+    <p><small>Above is an image using <code>&lt;img&gt;</code> tag.</small></p>
+
+    <hr>
+
+    <!-- LISTS -->
+    <h2>List Example</h2>
+    <h3>Ordered List</h3>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <h3>Unordered List</h3>
+    <ul>
+        <li>Front-end Development</li>
+        <li>Back-end Development</li>
+        <li>Database Management</li>
+    </ul>
+
+    <hr>
+
+    <!-- TABLE -->
+    <h2>Table Example</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Course</th>
+            <th>Duration</th>
+            <th>Fees</th>
+        </tr>
+        <tr>
+            <td>BCA</td>
+            <td>3 Years</td>
+            <td>₹45,000/year</td>
+        </tr>
+        <tr>
+            <td>B.Sc</td>
+            <td>3 Years</td>
+            <td>₹40,000/year</td>
+        </tr>
+        <tr>
+            <td>B.Com</td>
+            <td>3 Years</td>
+            <td>₹35,000/year</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <!-- IFRAME (FRAME) -->
+    <h2>Frame (iFrame) Example</h2>
+    <iframe 
+        src="https://www.example.com" 
+        width="400" 
+        height="200" 
+        title="Example Frame">
+    </iframe>
+
+    <hr>
+
+    <!-- MULTIMEDIA -->
+    <h2>Multimedia Examples</h2>
+
+    <h3>Audio</h3>
+    <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support audio playback.
+    </audio>
+
+    <h3>Video</h3>
+    <video width="400" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support video playback.
+    </video>
+
+    <hr>
+
+    <!-- FORM -->
+    <h2>Form Example</h2>
+    <form action="/submit" method="POST">
+        <label>Full Name:</label><br>
+        <input type="text" name="fullname" placeholder="Enter full name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="Enter email" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female<br><br>
+
+        <label>Subjects Interested:</label><br>
+        <input type="checkbox" name="subject" value="math"> Math
+        <input type="checkbox" name="subject" value="science"> Science
+        <input type="checkbox" name="subject" value="commerce"> Commerce<br><br>
+
+        <label>Select Course:</label><br>
+        <select name="course">
+            <option value="">-- Choose Course --</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc</option>
+            <option value="bcom">B.Com</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 HTML Demonstration Page</p>
+    </footer>
+
+</body>
+</html>

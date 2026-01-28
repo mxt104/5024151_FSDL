@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Student Registration Form</title>
+</head>
+
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form action="/submit" method="POST">
+
+        <!-- Text Input -->
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="full_name" placeholder="Enter your name" required><br><br>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email_address" placeholder="Enter your email" required><br><br>
+
+        <!-- Number Input -->
+        <label for="age">Age:</label><br>
+        <input type="number" id="age" name="age" min="5" max="100"><br><br>
+
+        <!-- Select Dropdown -->
+        <label for="course">Select Course:</label><br>
+        <select id="course" name="course">
+            <option value="">-- Select Course --</option>
+            <option value="bca">BCA</option>
+            <option value="bsc">B.Sc.</option>
+            <option value="bcom">B.Com</option>
+            <option value="ba">BA</option>
+        </select><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
