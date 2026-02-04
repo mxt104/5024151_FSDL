@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Grid & Form</title>
+
+    <!-- Bootstrap CSS -->
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet"
+    >
+
+    <style>
+        body {
+            background-image: url('download.png');
+            background-size: cover;
+            background-position: right;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+
+    <!-- Row 1 : Headings using Grid -->
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-primary text-center fst-italic">
+                First Syntax
+            </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h6 class="text-success" style="font-size: 40px; font-family: 'Times New Roman';">
+                Second Syntax
+            </h6>
+        </div>
+
+        <div class="col-md-6 text-end">
+            <h3 style="color: rgba(21, 11, 168, 0.6);">
+                Third Syntax
+            </h3>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Row 2 : Bootstrap Form -->
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <h4 class="text-center mb-3">Contact Form</h4>
+
+            <form class="p-4 border rounded bg-light">
+
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script 
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Car Showroom - Video Hover Edition</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0d1117;
+    color:white;
+    padding-bottom:50px;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#010409;
+    border-bottom:1px solid #30363d;
+}
+
+.navbar a{
+    color:#c9d1d9;
+    margin:0 12px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO SECTION WITH VIDEO */
+.hero{
+    position:relative;
+    height:350px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    padding-left:50px;
+}
+
+/* Background Video */
+.hero-video{
+    position:absolute;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%, -50%);
+    object-fit:cover;
+    z-index:0;
+}
+
+/* Overlay */
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:1;
+}
+
+/* Text above video */
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-content h1{
+    font-size:42px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:18px;
+    margin-top:6px;
+}
+
+/* CARS SECTION */
+.cars-section{
+    padding:40px 0;
+}
+
+.cars-section h2{
+    font-size:26px;
+    margin-bottom:18px;
+}
+
+.car-grid{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+/* CAR CARD */
+.car-card{
+    width:260px;
+    background:#161b22;
+    border-radius:8px;
+    border:1px solid #30363d;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Image */
+.car-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    transition:0.3s ease;
+}
+
+/* Video */
+.car-card video{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:0.3s ease;
+    pointer-events:none;
+}
+
+.car-card:hover video{opacity:1;}
+.car-card:hover img{opacity:0;}
+
+.car-card h3{
+    padding:10px;
+    font-size:20px;
+    color:#f0f6fc;
+}
+
+.car-card p{
+    padding:0 10px 12px;
+    font-weight:bold;
+    color:#f0b90b;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div style="color:white;font-weight:700;font-size:20px;">Elite Motors</div>
+    <nav>
+        <a href="#">Cars</a>
+        <a href="#">Offers</a>
+        <a href="#">Finance</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO WITH BACKGROUND VIDEO -->
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="banner.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+        <h1>Luxury Cars in Motion</h1>
+        <p>Hover to see real video edits of our premium lineup.</p>
+    </div>
+</section>
+
+<!-- CARS -->
+<section class="cars-section">
+<div class="container">
+    <h2>Featured Cars</h2>
+
+    <div class="car-grid">
+
+        <div class="car-card">
+            <img src="m3.png">
+            <video muted autoplay loop playsinline>
+                <source src="bmw.mp4" type="video/mp4">
+            </video>
+            <h3>BMW M3</h3>
+            <p>₹78,00,000</p>
+        </div>
+
+        <div class="car-card">
+            <img src="a6.png">
+            <video muted autoplay loop playsinline>
+                <source src="audi.mp4" type="video/mp4">
+            </video>
+            <h3>Audi A6</h3>
+            <p>₹65,00,000</p>
+        </div>
+
+        <div class="car-card">
+            <img src="mercedes gt.png">
+            <video muted autoplay loop playsinline>
+                <source src="mercedes.mp4" type="video/mp4">
+            </video>
+            <h3>Mercedes-Benz AMG GT</h3>
+            <p>₹82,00,000</p>
+        </div>
+
+        <div class="car-card">
+            <img src="porsche.png">
+            <video muted autoplay loop playsinline>
+                <source src="porsche.mp4" type="video/mp4">
+            </video>
+            <h3>Porsche 911 GT3 RS</h3>
+            <p>₹82,00,000</p>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
