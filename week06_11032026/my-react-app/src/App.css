@@ -1,0 +1,103 @@
+body{
+  margin:0;
+  background:#0a0a0a;
+  font-family:Arial, Helvetica, sans-serif;
+  color:white;
+}
+
+.race-container{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* timer center */
+
+.timer-box{
+  text-align:center;
+}
+
+.timer{
+  font-size:80px;
+  color:#e10600;
+  letter-spacing:3px;
+}
+
+/* buttons */
+
+.controls button{
+  margin:10px;
+  padding:12px 24px;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.controls button:hover{
+  transform:scale(1.1);
+}
+
+.start{background:#00c853;}
+.stop{background:#ff9100;}
+.reset{background:#e10600;}
+.lap{background:#2962ff;}
+
+/* lap popup */
+
+.lap-popup{
+  position:fixed;
+  top:120px;
+  background:#e10600;
+  padding:15px 25px;
+  border-radius:8px;
+  font-size:22px;
+  animation:popup 0.4s ease;
+}
+
+@keyframes popup{
+  from{transform:scale(0.6);opacity:0;}
+  to{transform:scale(1);opacity:1;}
+}
+
+/* lap list */
+
+.lap-board{
+  position:fixed;
+  right:40px;
+  top:120px;
+  width:220px;
+  background:#111;
+  padding:15px;
+  border-radius:10px;
+}
+
+.lap-row{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+  border-bottom:1px solid #333;
+}
+
+/* moving car */
+
+.car-track{
+  position:fixed;
+  bottom:60px;
+  width:100%;
+  overflow:hidden;
+}
+
+.car{
+  font-size:40px;
+  position:relative;
+  animation:drive 6s linear infinite;
+}
+
+@keyframes drive{
+  0%{ left:-10%; }
+  100%{ left:110%; }
+}
