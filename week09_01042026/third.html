@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="studentApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Record Manager</title>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+            padding: 20px;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        input.ng-invalid.ng-touched {
+            border: 2px solid red;
+        }
+
+        input.ng-valid.ng-touched {
+            border: 2px solid green;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container" ng-controller="StudentController">
+
+    <h2>🎓 Student Record Manager</h2>
+
+    <form name="studentForm" novalidate ng-submit="addStudent()">
+
+        <!-- Name -->
+        <label>Name:</label>
+        <input type="text" name="name" ng-model="student.name" required>
+
+        <span class="error" ng-show="studentForm.name.$touched && studentForm.name.$error.required">
+            Name is required
+        </span>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="email" ng-model="student.email" required>
+
+        <span class="error" ng-show="studentForm.email.$touched && studentForm.email.$error.email">
+            Invalid email format
+        </span>
+
+        <!-- Age -->
+        <label>Age:</label>
+        <input type="number" name="age" ng-model="student.age" min="18" max="60" required>
+
+        <span class="error" ng-show="studentForm.age.$error.min">
+            Minimum age is 18
+        </span>
+
+        <!-- Course -->
+        <label>Course:</label>
+        <input type="text" name="course" ng-model="student.course" required>
+
+        <span class="error" ng-show="studentForm.course.$touched && studentForm.course.$error.required">
+            Course is required
+        </span>
+
+        <!-- Events -->
+        <button type="submit" ng-disabled="studentForm.$invalid">
+            Add Student
+        </button>
+
+        <button type="button" ng-click="resetForm()">
+            Reset
+        </button>
+
+    </form>
+
+    <h3>{{ message }}</h3>
+
+    <!-- Student Table -->
+    <table ng-if="students.length > 0">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Action</th>
+        </tr>
+
+        <tr ng-repeat="s in students">
+            <td>{{ s.name }}</td>
+            <td>{{ s.email }}</td>
+            <td>{{ s.age }}</td>
+            <td>{{ s.course }}</td>
+            <td>
+                <button ng-click="deleteStudent($index)">Delete</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+var app = angular.module('studentApp', []);
+
+app.controller('StudentController', function($scope) {
+
+    $scope.students = [];
+    $scope.student = {};
+
+    // EVENT: Add Student (ng-submit)
+    $scope.addStudent = function() {
+        if ($scope.studentForm.$valid) {
+            $scope.students.push(angular.copy($scope.student));
+            $scope.message = "Student added successfully ✅";
+            $scope.resetForm();
+        }
+    };
+
+    // EVENT: Delete Student (ng-click)
+    $scope.deleteStudent = function(index) {
+        $scope.students.splice(index, 1);
+        $scope.message = "Student removed ❌";
+    };
+
+    // EVENT: Reset Form
+    $scope.resetForm = function() {
+        $scope.student = {};
+        $scope.studentForm.$setPristine();
+        $scope.studentForm.$setUntouched();
+    };
+
+});
+</script>
+
+</body>
+</html>

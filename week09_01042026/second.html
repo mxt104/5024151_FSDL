@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Events & Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        .error { color: red; }
+        input.ng-invalid.ng-touched { border: 2px solid red; }
+        input.ng-valid.ng-touched { border: 2px solid green; }
+    </style>
+</head>
+<body>
+
+<div ng-controller="FormController">
+
+    <h2>Registration Form</h2>
+
+    <form name="myForm" novalidate>
+
+        <!-- Name -->
+        <label>Name:</label><br>
+        <input type="text" name="username"
+               ng-model="user.name"
+               required
+               ng-blur="checkName()"><br>
+
+        <span class="error" ng-show="myForm.username.$touched && myForm.username.$error.required">
+            Name is required
+        </span><br><br>
+
+        <!-- Email -->
+        <label>Email:</label><br>
+        <input type="email" name="email"
+               ng-model="user.email"
+               required><br>
+
+        <span class="error" ng-show="myForm.email.$touched && myForm.email.$error.email">
+            Invalid email format
+        </span><br><br>
+
+        <!-- Button with event -->
+        <button ng-click="submitForm()" ng-disabled="myForm.$invalid">
+            Submit
+        </button>
+
+    </form>
+
+    <h3>{{ message }}</h3>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('FormController', function($scope) {
+    $scope.user = {};
+
+    // Event: blur
+    $scope.checkName = function() {
+        if ($scope.user.name) {
+            $scope.message = "Typing looks good 👍";
+        }
+    };
+
+    // Event: click
+    $scope.submitForm = function() {
+        $scope.message = "Form submitted successfully 🎉";
+    };
+});
+</script>
+
+</body>
+</html>

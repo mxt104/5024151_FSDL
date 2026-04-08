@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="helloApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS Hello World</title>
+
+    <!-- Include AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+
+    <div ng-controller="HelloController">
+        <h1>Hello World using AngularJS</h1>
+
+        <!-- ng-model binds input value -->
+        <input type="text" ng-model="name" placeholder="Enter your name">
+
+        <!-- Expression displays dynamic value -->
+        <h2>Hello {{ name }} 👋</h2>
+    </div>
+
+    <script>
+        // Create AngularJS app
+        var app = angular.module('helloApp', []);
+
+        // Create controller
+        app.controller('HelloController', function($scope) {
+            $scope.name = "User"; // Default value
+        });
+    </script>
+
+</body>
+</html>
